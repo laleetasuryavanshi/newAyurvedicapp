@@ -72,9 +72,13 @@ app.post('/api/enquiry', async (req, res) => {
     }
 });
 
-// Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, 'build')));
-// Catchall handler for any requests that don't match above
+
+app.use(express.static(path.join(__dirname, 'C:\ayurvedic-app-frontend\build')));
+
+// Catch-all handler for any requests that don't match above
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'C:\ayurvedic-app-frontend\build', 'index.html'));
+});
 
 // Start the server
 app.listen(PORT, () => {
