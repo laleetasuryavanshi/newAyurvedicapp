@@ -73,11 +73,13 @@ app.post('/api/enquiry', async (req, res) => {
 });
 
 
-app.use(express.static(path.join(__dirname, 'C:\ayurvedic-app-frontend\build')));
+app.use(express.static(path.join(__dirname, '../ayurvedic-app-frontend/build')));
 
 // Catch-all handler for any requests that don't match above
+
+
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'C:\ayurvedic-app-frontend\build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../ayurvedic-app-frontend/build', 'index.html'));
 });
 
 // Start the server
